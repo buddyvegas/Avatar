@@ -5,13 +5,21 @@
   "module": "dist/index.es.js",
   "svelte": "src/index.js",
   "scripts": {
-    "build": "rollup -c"
+    "build:rollup": "rollup -c",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.2.1",
+    "mini-css-extract-plugin": "^0.9.0",
     "rollup": "^2.3.4",
     "rollup-plugin-svelte": "^5.0.3",
-    "svelte": "^3.0.0"
+    "style-loader": "^1.2.1",
+    "svelte": "^3.0.0",
+    "svelte-loader": "^2.13.6",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }
