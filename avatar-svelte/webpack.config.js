@@ -6,7 +6,7 @@ const prod = mode === 'production';
 
 module.exports = {
 	entry: {
-		bundle: ['./src/AVatar/avatar.svelte']
+		bundle: ['./src/main.js']
 	},
 	resolve: {
 		alias: {
@@ -17,10 +17,10 @@ module.exports = {
 	},
 	output: {
 		path: __dirname + '/public',
-		filename: '[name].js',
-    chunkFilename: '[name].[id].js',
-    library: 'Avatar',
-    libraryTarget: 'umd'
+		filename: 'index.js',
+    libraryTarget: 'umd',
+    library: 'AvatarSvelte',
+    umdNamedDefine: true
 	},
 	module: {
 		rules: [
@@ -31,6 +31,16 @@ module.exports = {
 					options: {
 						emitCss: true,
 						hotReload: true
+					}
+				}
+			},
+			{
+				test: /\.m?js$/,
+				exclude: /(node_modules|bower_components)/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env']
 					}
 				}
 			},

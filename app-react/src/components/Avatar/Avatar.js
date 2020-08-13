@@ -1,19 +1,25 @@
 import React, { useRef, useLayoutEffect } from "react";
-import AvatarSvelte from "../../libs/avatar-svelte";
+// import { Avatar } from '../../libs/avatar';
+// import AvatarSvelte from '../../libs/avatar';
+import { test } from '../../libs/avatar';
 
-const Avatar = ({ name }) => {
+const AvatarComponent = ({ name }) => {
   const ref = useRef();
 
-  useLayoutEffect(() => {
-    new AvatarSvelte({
-      target: ref.current,
-      props: {
-        name
-      }
-    });
-  }, []);
+  test();
+
+  // console.log(AvatarSvelte);
+
+  // useLayoutEffect(() => {
+  //   new AvatarSvelte({
+  //     target: ref.current,
+  //     props: {
+  //       name
+  //     }
+  //   });
+  // }, []);
 
   return <span ref={ref}></span>;
 };
 
-export default Avatar;
+export default AvatarComponent;
