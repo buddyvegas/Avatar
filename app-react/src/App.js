@@ -2,7 +2,7 @@ import React from "react";
 import Avatar from "./components/Avatar";
 
 function App() {
-  const [name, setName] = React.useState("bobby");
+  const [name, setName] = React.useState("pouet");
 
   const changeName = () => {
     setName("billy");
