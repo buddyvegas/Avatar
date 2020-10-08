@@ -10,9 +10,11 @@ function App() {
 
   return (
     <div className="App">
-      TEST AVATAR : <Avatar name={name} />
+      TEST AVATAR 1 : <Avatar name={name} />
+      <br />
+      TEST AVATAR 2 : <Avatar name="toto" />
       <p>
-        <button onClick={changeName}>Change name</button>
+        <button onClick={changeName}>Change name AVATAR 1</button>
       </p>
     </div>
   );

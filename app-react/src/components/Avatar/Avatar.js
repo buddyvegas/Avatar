@@ -1,17 +1,24 @@
-import React, { useRef, useLayoutEffect } from "react";
-const Avatar = require('../../libs/avatar');
+import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
+import Avatar from "../../libs/avatar";
 
 const AvatarComponent = ({ name }) => {
   const ref = useRef();
+  const avatar = useRef();
 
   useLayoutEffect(() => {
-    new Avatar({
+    avatar.current = new Avatar({
       target: ref.current,
       props: {
-        name
-      }
+        name,
+      },
     });
   }, []);
+
+  useEffect(() => {
+    if (avatar.current) {
+      avatar.current.update({ name });
+    }
+  }, [name]);
 
   return <span ref={ref}></span>;
 };
