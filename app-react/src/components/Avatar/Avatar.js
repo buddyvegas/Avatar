@@ -1,17 +1,11 @@
 import React, { useRef, useLayoutEffect } from "react";
-// import { Avatar } from '../../libs/avatar';
-import AvatarSvelte from '../../libs/avatar';
-// import { test } from '../../libs/avatar';
+const Avatar = require('../../libs/avatar');
 
 const AvatarComponent = ({ name }) => {
   const ref = useRef();
 
-  // test();
-
-  // console.log(AvatarSvelte);
-
   useLayoutEffect(() => {
-    new AvatarSvelte({
+    new Avatar({
       target: ref.current,
       props: {
         name
