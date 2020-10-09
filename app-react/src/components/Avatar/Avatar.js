@@ -20,7 +20,7 @@ const AvatarComponent = ({ name }) => {
     }
   }, [name]);
 
-  return <span ref={ref}></span>;
+  return <div style={{ width: '60px', height: '60px' }} ref={ref}></div>;
 };
 
 export default AvatarComponent;
