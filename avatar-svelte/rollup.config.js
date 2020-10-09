@@ -11,8 +11,8 @@ export default {
 	},
 	plugins: [
 		svelte({
-			dev: true,
-			format: 'cjs'
+			format: 'cjs',
+			customElement: true
 		}),
 		resolve({
 			browser: true,

@@ -1,3 +1,5 @@
+<svelte:options tag="af-avatar" />
+
 <script>
   export let fontColor = "#000000";
   export let name = "toto";
@@ -41,3 +43,4 @@
     {getInitials(name)}
   </text>
 </svg>
+
