@@ -3,6 +3,8 @@ import "../../libs/avatar";
 
 import './Avatar.scss';
 
+const Pouet = () => <>Pouet lol</>
+
 const AvatarComponent = ({ name }) => {
   // const ref = useRef();
   // const avatar = useRef();
@@ -29,7 +31,7 @@ const AvatarComponent = ({ name }) => {
       <div style={{ width: '60px', height: '60px' }}>
         <af-avatar name={name} />
       </div>
-      <span class="label">{name}</span>
+      <span className="label">{name}</span>
     </div>
     )
 };

@@ -25,8 +25,8 @@
     const hue = Math.abs(hash % 360);
 
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-	};
-	
+  };
+
 	// ajouter un fond blanc + fond transparent + texte couleur généré
 </script>
 
@@ -39,8 +39,7 @@
     cy="25"
     r="24"
     opacity="1" />
-  <text x="25" y="26" dy="0.35em" textAnchor="middle" fill={fontColor}>
+  <text x="17" y="30" textAnchor="middle" fill={fontColor}>
     {getInitials(name)}
   </text>
 </svg>
-
