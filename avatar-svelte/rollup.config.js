@@ -4,19 +4,35 @@ import commonjs from "@rollup/plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 import serve from "rollup-plugin-serve";
 import livereload from "rollup-plugin-livereload";
+import autoPreprocess from "svelte-preprocess";
+import typescript from "@rollup/plugin-typescript";
 
 const production = !process.env.ROLLUP_WATCH;
 
+function typeCheck() {
+  return {
+    writeBundle() {
+      require("child_process").spawn("svelte-check", {
+        stdio: ["ignore", "inherit", "inherit"],
+        shell: true,
+      });
+    },
+  };
+}
+
 export default {
-  input: "src/main.js",
+  input: "src/main.ts",
   output: {
     format: "cjs",
     file: production ? "build/index.js" : "public/build/index.js",
   },
   plugins: [
+    // typeCheck(),
+
     svelte({
       format: "cjs",
       customElement: true,
+      preprocess: autoPreprocess(),
     }),
 
     resolve({
@@ -25,6 +41,8 @@ export default {
     }),
 
     commonjs(),
+
+    typescript(),
 
     !production &&
       serve({
