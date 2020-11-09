@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "app-html"
+    },
+    {
+      "path": "app-react"
+    },
+    {
+      "path": "avatar-svelte"
+    }
+  ],
+  "settings": {}
+}
