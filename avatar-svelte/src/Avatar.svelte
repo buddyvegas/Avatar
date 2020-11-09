@@ -1,13 +1,11 @@
-<svelte:options tag="af-avatar" />
-
 <script>
   export let fontColor = "#000000";
   export let name = "toto";
 
   const getInitials = (name) =>
     name
-			? name
-					.toUpperCase()
+      ? name
+          .toUpperCase()
           .split(/[-\s]/g)
           .map((x) => x.charAt(0))
           .join("")
@@ -27,9 +25,10 @@
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
-	// ajouter un fond blanc + fond transparent + texte couleur généré
+  // ajouter un fond blanc + fond transparent + texte couleur généré
 </script>
 
+<svelte:options tag="af-avatar" />
 <svg version="1.1" viewBox="0 0 50 50">
   <circle
     fill={getColor(name)}
