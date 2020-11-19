@@ -1,0 +1,13 @@
+body {
+  background-color: #181818;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+
+.content > * {
+  margin: 1rem;
+}

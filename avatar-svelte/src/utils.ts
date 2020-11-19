@@ -10,7 +10,7 @@ export const getInitials = (name: string): string =>
 
 export const getColor = (name: string) => {
   const saturation: number = 100;
-  const lightness: number = 55;
+  const lightness: number = 65;
 
   const hash: number = name
     .split("")
