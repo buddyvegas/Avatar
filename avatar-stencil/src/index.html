@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/avatar-stencil.esm.js"></script>
-    <script nomodule src="/build/avatar-stencil.js"></script>
-  </head>
-  <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/avatar-stencil.esm.js"></script>
+  <script nomodule src="/build/avatar-stencil.js"></script>
+  <style>
+    body {
+      background-color: #181818;
+      color: white;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      margin: 1rem;
+    }
+
+    .content>* {
+      margin: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <af-avatar name="Homer Simpson" size="50"></af-avatar>
+    <af-avatar name="Marge Simpson" size="50"></af-avatar>
+    <af-avatar name="Bart Simpson" size="50"></af-avatar>
+    <af-avatar name="Lisa Simpson" size="50"></af-avatar>
+    <af-avatar name="Maggie Simpson" size="50"></af-avatar>
+  </div>
+</body>
+
 </html>
