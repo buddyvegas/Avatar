@@ -1,9 +1,7 @@
 import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 import "../../libs/avatar";
 
-import './Avatar.scss';
-
-const Pouet = () => <>Pouet lol</>
+import "./Avatar.scss";
 
 const AvatarComponent = ({ name }) => {
   // const ref = useRef();
@@ -28,12 +26,12 @@ const AvatarComponent = ({ name }) => {
 
   return (
     <div className="container">
-      <div style={{ width: '60px', height: '60px' }}>
+      <div style={{ width: "60px", height: "60px" }}>
         <af-avatar name={name} />
       </div>
       <span className="label">{name}</span>
     </div>
-    )
+  );
 };
 
 export default AvatarComponent;

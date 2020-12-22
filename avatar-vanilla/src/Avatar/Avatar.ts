@@ -1,3 +1,4 @@
+import { HTMLWebComponent } from "HTMLWebComponent";
 import { getColor, getInitials } from "./utils";
 
 type AvatarPropsType = {
@@ -10,45 +11,14 @@ const _props: AvatarPropsType = {
   size: 60,
 };
 
-class Avatar extends HTMLElement {
+class Avatar extends HTMLWebComponent<AvatarPropsType> {
   props: AvatarPropsType = { ..._props };
 
-  constructor() {
-    super();
-  }
-
-  static get observedAttributes() {
+  static get observedAttributes(): string[] {
     return Object.keys(_props);
   }
 
-  connectedCallback() {
-    if (!this.shadowRoot) {
-      this.attachShadow({ mode: 'open' });
-    }
-
-    this.init();
-    this.render();
-  }
-
-  attributeChangedCallback(key: string, oldValue: string, newValue: string) {
-    Object.keys(this.props).forEach(k => {
-      if (k === key && oldValue !== newValue) {
-        this.props[k] = newValue;
-      }
-    });
-
-    this.render();
-  }
-
-  private init() {
-    Object.keys(this.props).forEach(k => {
-      if (this.hasAttribute(k)) {
-        this.props[k] = this.getAttribute(k);
-      }
-    });
-  }
-
-  private render() {
+  render(): void {
     if (!this.shadowRoot) {
       return;
     }
