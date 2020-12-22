@@ -8,6 +8,12 @@
     },
     {
       "path": "avatar-svelte"
+    },
+    {
+      "path": "avatar-stencil"
+    },
+    {
+      "path": "avatar-vanilla"
     }
   ],
   "settings": {}
